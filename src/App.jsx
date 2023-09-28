@@ -9,6 +9,7 @@ import About from "./Components/About/About";
 import Orders from "./Components/Orders/Orders";
 import Login from "./Components/LogIn/Login";
 import SignUp from "./Components/SignUp/SignUp";
+import Shop from "./Components/Shop/Shop";
 
 function App() {
   const router = createBrowserRouter([
@@ -36,13 +37,17 @@ function App() {
           path: "/signup",
           element: <SignUp></SignUp>
         },
+        {
+          path: "/shop",
+          element: <Shop></Shop>
+        }
       ]
     },
   ]);
 
 
   return (
-    <div className="App">
+    <div >
      <RouterProvider router={router}></RouterProvider>
     </div>
   )
