@@ -48,7 +48,7 @@ const Header = () => {
         </div>
 
         <div className="inline-block w-1/3 flex justify-between">
-          <Link className="inline">
+          <Link to={'/signup'} className="inline">
             <svg
               className="inline"
               xmlns="http://www.w3.org/2000/svg"

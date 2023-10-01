@@ -67,7 +67,7 @@ const Home = () => {
       <div id="voucher" className="mx-3 my-6">
         <img src="../../../image/voucher.jpg" alt="" srcset="" />
       </div>
-      <div className="flex justify-between">
+      <div className="mx-3 flex justify-between">
       {
         Collection.map(item => {
           return (
