@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../Contexts/UserContexts";
+
 
 const Login = () => {
-  const {user} = useContext(AuthContext);
+  
   return (
     <div className="my-12">
       <form className="mx-auto w-full max-w-lg ">
-       <h2>{user.email}</h2>
+       
         <div className="flex flex-wrap -mx-3 mb-6">
           <div className="w-full px-3">
             <label

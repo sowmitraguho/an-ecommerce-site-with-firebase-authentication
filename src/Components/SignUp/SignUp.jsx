@@ -2,20 +2,31 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const SignUp = () => {
+  
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    const confirm = form.confirm.value;
+    console.log(email, password, confirm);
+  }
+
+
   return (
     <div className="my-12">
-      <form className="mx-auto w-full max-w-lg ">
+      <form className="mx-auto w-full max-w-lg " onSubmit={handleSubmit}>
         <div className="flex flex-wrap -mx-3 mb-6">
           <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
             <label
               className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              for="grid-first-name"
+              htmlFor="firstname"
             >
               First Name
             </label>
             <input
               className="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-              id="grid-first-name"
+              id="firstname"
               type="text"
               placeholder="Jane"
             />
@@ -26,13 +37,13 @@ const SignUp = () => {
           <div className="w-full md:w-1/2 px-3">
             <label
               className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              for="grid-last-name"
+              htmlFor="lastname"
             >
               Last Name
             </label>
             <input
               className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-              id="grid-last-name"
+              id="lastname"
               type="text"
               placeholder="Doe"
             />
@@ -42,14 +53,15 @@ const SignUp = () => {
           <div className="w-full px-3">
             <label
               className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              for="grid-email"
+              htmlFor="email"
             >
               Email
             </label>
             <input
               className="required appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-              id="grid-password"
+              id="email"
               type="email"
+              name="email"
               placeholder="john@abc.com"
             />
           </div>
@@ -58,14 +70,15 @@ const SignUp = () => {
           <div className="w-full px-3">
             <label
               className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              for="grid-password"
+              htmlFor="password"
             >
               Password
             </label>
             <input
               className="required appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-              id="grid-password"
+              id="password"
               type="password"
+              name="password"
               placeholder="******************"
             />
             <p className="text-gray-600 text-xs italic">
@@ -74,17 +87,34 @@ const SignUp = () => {
             </p>
           </div>
         </div>
+        <div className="flex flex-wrap -mx-3 mb-6">
+          <div className="w-full px-3">
+            <label
+              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+              htmlFor="confirm"
+            >
+              Confirm Password
+            </label>
+            <input
+              className="required appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              id="confirm"
+              type="password"
+              name="confirm"
+              placeholder="******************"
+            />
+          </div>
+        </div>
         <div className="flex flex-wrap -mx-3 mb-2">
           <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
             <label
               className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              for="grid-city"
+              htmlFor="city"
             >
               City
             </label>
             <input
               className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-              id="grid-city"
+              id="city"
               type="text"
               placeholder="Albuquerque"
             />
@@ -92,14 +122,14 @@ const SignUp = () => {
           <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
             <label
               className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              for="grid-state"
+              htmlFor="state"
             >
               State
             </label>
             <div className="relative">
               <select
                 className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                id="grid-state"
+                id="state"
               >
                 <option>New Mexico</option>
                 <option>Missouri</option>
@@ -119,21 +149,21 @@ const SignUp = () => {
           <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
             <label
               className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              for="grid-zip"
+              htmlFor="zip"
             >
               Zip
             </label>
             <input
               className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-              id="grid-zip"
+              id="zip"
               type="text"
               placeholder="90210"
             />
           </div>
         </div>
-        <button
+        <button 
           className="w-full flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded"
-          type="button"
+          type="submit" 
         >
           Sign Up
         </button>
